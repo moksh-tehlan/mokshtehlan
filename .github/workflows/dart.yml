@@ -9,4 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
-      - uses: moksh-tehlan/flutter-web-pages/mokshtehlan-gh-pages.yaml@v7
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Install dependencies
+        run: dart run build_runner build -d
+      - uses: erickzanardo/flutter-gh-pages@v7
+        with:
+          webRenderer: canvaskit
+          customArgs: --target="lib/main_production.dart"
