@@ -1,5 +1,6 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key});
@@ -9,38 +10,71 @@ class TopBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Moksh Tehlan'),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: '{ ',
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.5),
+                  fontWeight: FontWeight.w900,
+                  fontSize: 34.sp,
+                ),
+              ),
+              TextSpan(
+                text: 'Moksh Tehlan',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30.sp,
+                ),
+              ),
+              TextSpan(
+                text: ' }',
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.5),
+                  fontWeight: FontWeight.w900,
+                  fontSize: 34.sp,
+                ),
+              ),
+            ],
+          ),
+        ),
         const Spacer(),
-        topBarText('Home', isSelected: true),
-        SizedBox(
-          width: 10.toResponsiveWidth(context),
+        Image.asset(
+          Assets.printerImage,
+          color: Colors.white,
+          width: 30.w,
+          height: 30.w,
         ),
-        topBarText('About Me'),
+        // topBarText('Home', isSelected: true),
         SizedBox(
-          width: 10.toResponsiveWidth(context),
+          width: 40.w,
         ),
-        topBarText('Portfolio'),
+        Image.asset(
+          Assets.linkedinImage,
+          color: Colors.white,
+          width: 30.w,
+          height: 30.w,
+        ),
         SizedBox(
-          width: 10.toResponsiveWidth(context),
+          width: 40.w,
         ),
-        topBarText('Resume'),
+        Image.asset(
+          Assets.emailImage,
+          color: Colors.white,
+          width: 30.w,
+          height: 30.w,
+        ),
         SizedBox(
-          width: 10.toResponsiveWidth(context),
+          width: 40.w,
         ),
-        topBarText('Skills'),
-        SizedBox(
-          width: 10.toResponsiveWidth(context),
+        Image.asset(
+          Assets.githubImage,
+          color: Colors.white,
+          width: 30.w,
+          height: 30.w,
         ),
-        topBarText('Contact me'),
       ],
     );
   }
-
-  Text topBarText(String text, {bool isSelected = false}) => Text(
-        text,
-        style: TextStyle(
-          fontSize: 16,
-          color: isSelected ? Colors.white : Colors.white.withOpacity(0.5),
-        ),
-      );
 }
