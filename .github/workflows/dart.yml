@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
-      - uses: moksh-tehlan/mokshtehlan-gh-pages.yaml@v7
+      - uses: moksh-tehlan/flutter-web-pages/mokshtehlan-gh-pages.yaml@v7
