@@ -42,10 +42,15 @@ class _CasetImageState extends State<CasetImage>
       builder: (context, child) {
         return Transform.translate(
           offset: Offset(0, _animation.value),
-          child: Image.asset(
-            Assets.casetImage, // Replace with your image path
-            width: 500.w,
-            height: 500.w,
+          child: Opacity(
+            opacity: context.isMobile ? 0.20 : 1,
+            child: Image.asset(
+              Assets.casetImage, // Replace with your image path
+              width: 500.w,
+              height: 500.w,
+              // color: Colors.white.withOpacity(0.6),
+              // colorBlendMode: BlendMode.dstATop,
+            ),
           ),
         );
       },

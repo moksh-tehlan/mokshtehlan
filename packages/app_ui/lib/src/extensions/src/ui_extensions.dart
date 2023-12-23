@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 //ignore_for_file:public_member_api_docs
 
 class ScreenUtils {
-  static const double figmaScreenHeight = 844;
-  static const double figmaScreenWidth = 1512;
+  static const double figmaScreenHeight = 972;
+  static const double figmaScreenWidth = 1920;
 }
 
 /// Converts the value with respect to the component:figma Screen ratio.
@@ -31,3 +31,19 @@ extension ResponsiveEdgeInsets on EdgeInsets {
         bottom: bottom.toResponsiveHeight(context),
       );
 }
+
+extension ContextExtension on BuildContext {
+  bool get isMobile =>
+      (MediaQuery.of(this).size.width) < ResponsiveUtils.mobileWidthBreakpoint;
+  bool get isTab =>
+      (MediaQuery.of(this).size.width) < ResponsiveUtils.tabWidthBreakpoint;
+  bool get isDesktop =>
+      (MediaQuery.of(this).size.width) < ResponsiveUtils.tabWidthBreakpoint;
+}
+
+class ResponsiveUtils {
+  static const int tabWidthBreakpoint = 600;
+  static const int mobileWidthBreakpoint = 481;
+// static const int tabWidthBreakpoint = 600;
+}
+

@@ -3,7 +3,10 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mokshtehlan/views/home/components/app_bar.dart';
-import 'package:mokshtehlan/views/home/components/caset_image.dart';
+import 'package:mokshtehlan/views/home/components/footer_page.dart';
+import 'package:mokshtehlan/views/home/components/landing_page.dart';
+import 'package:mokshtehlan/views/home/components/project_page.dart';
+import 'package:mokshtehlan/views/home/components/work_experience_page.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
@@ -20,112 +23,58 @@ class HomePageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const topBarHeight = 80.0;
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 80).r,
-          child: const TopBar(),
-        ),
-        titleSpacing: 0,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 80).r,
-        child: SizedBox(
-          width: context.screenWidth,
-          height: context.screenHeight,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Hey there!, I'm-",
-                    style: TextStyle(
-                      color: Colors.green,
-                      fontSize: 44.sp,
-                    ),
-                  ),
-                  Text(
-                    'Moksh Tehlan.',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 140.sp,
-                      fontWeight: AppFontWeight.bold
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30.h,
-                  ),
-                  SizedBox(
-                    width: 0.55.sw,
-                    child: RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'Software Engineer. ',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 44.sp,
-                            ),
-                          ),
-                          TextSpan(
-                            text:
-                                'A self-taught developer with an interest in Computer Science.',
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.6),
-                              fontSize: 44.sp,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30.h,
-                  ),
-                  Text(
-                    '🚀 Exploring opportunities and side projects.',
-                    style: TextStyle(
-                      color: Colors.white.withOpacity(0.6),
-                      fontSize: 28.sp,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: '💻 Currently specializing in ',
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.6),
-                            fontSize: 28.sp,
-                          ),
-                        ),
-                        TextSpan(
-                          text: 'Android and Flutter Development',
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 28.sp,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 120).r,
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: Colors.white,
+                  width: context.isMobile ? 0.40 : 0.25,
+                ),
               ),
-              const Spacer(),
-              const CasetImage(),
-            ],
+            ),
+            height: topBarHeight,
+            child: const TopBar(),
           ),
-        ),
+          SizedBox(
+            width: context.screenWidth,
+            height: context.screenHeight - topBarHeight,
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 120).r,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SizedBox(
+                      width: context.screenWidth,
+                      height: context.isMobile
+                          ? 0.35.sh
+                          : context.screenHeight - topBarHeight,
+                      child: const LandingPage(),
+                    ),
+                    SizedBox(
+                      width: context.screenWidth,
+                      child: const WorkExperiencePage(),
+                    ),
+                    SizedBox(
+                      height: context.isMobile ? 30 : 80.h,
+                    ),
+                    const ProjectPage(),
+                    SizedBox(
+                      height: context.isMobile ? 60 : 200.h,
+                    ),
+                    const FooterPage(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
