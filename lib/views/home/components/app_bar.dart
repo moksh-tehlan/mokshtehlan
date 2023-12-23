@@ -1,6 +1,7 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key});
@@ -18,14 +19,14 @@ class TopBar extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white.withOpacity(0.5),
                   fontWeight: FontWeight.w900,
-                  fontSize: 34.sp,
+                  fontSize: 34,
                 ),
               ),
-              TextSpan(
+              const TextSpan(
                 text: 'Moksh Tehlan',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 30.sp,
+                  fontSize: 30,
                 ),
               ),
               TextSpan(
@@ -33,7 +34,7 @@ class TopBar extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white.withOpacity(0.5),
                   fontWeight: FontWeight.w900,
-                  fontSize: 34.sp,
+                  fontSize: 34,
                 ),
               ),
             ],
@@ -43,18 +44,18 @@ class TopBar extends StatelessWidget {
         Image.asset(
           Assets.printerImage,
           color: Colors.white,
-          width: 30.w,
-          height: 30.w,
+          width: 35,
+          height: 35,
         ),
         // topBarText('Home', isSelected: true),
         SizedBox(
           width: 40.w,
         ),
-        Image.asset(
-          Assets.linkedinImage,
+        SvgPicture.asset(
+          Assets.linkedInLogo,
           color: Colors.white,
-          width: 30.w,
-          height: 30.w,
+          width: 35,
+          height: 35,
         ),
         SizedBox(
           width: 40.w,
@@ -62,17 +63,17 @@ class TopBar extends StatelessWidget {
         Image.asset(
           Assets.emailImage,
           color: Colors.white,
-          width: 30.w,
-          height: 30.w,
+          width: 35,
+          height: 35,
         ),
         SizedBox(
           width: 40.w,
         ),
-        Image.asset(
-          Assets.githubImage,
+        SvgPicture.asset(
+          Assets.githubLogo,
           color: Colors.white,
-          width: 30.w,
-          height: 30.w,
+          width: 40,
+          height: 40,
         ),
       ],
     );
