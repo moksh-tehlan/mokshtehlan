@@ -31,7 +31,9 @@ class ProjectsCard extends StatelessWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(20).r,
+            padding: context.isMobile
+                ? const EdgeInsets.all(10)
+                : const EdgeInsets.all(20).r,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20),
@@ -42,48 +44,50 @@ class ProjectsCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const Text(
+                    Text(
                       'Movie Mania',
-                      style: TextStyle(color: Colors.white, fontSize: 28),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: context.isMobile ? 22 : 28),
                     ),
                     const Spacer(),
                     Image.asset(
                       Assets.githubImage,
-                      width: 30.w,
-                      height: 30.w,
+                      width: context.isMobile ? 20 : 30.w,
+                      height: context.isMobile ? 20 : 30.w,
                       color: Colors.white,
                     ),
                     SizedBox(
-                      width: 20.w,
+                      width: context.isMobile ? 15 : 20.w,
                     ),
                     Image.asset(
                       Assets.externalLinkImage,
-                      width: 30.w,
-                      height: 30.w,
+                      width: context.isMobile ? 20 : 30.w,
+                      height: context.isMobile ? 20 : 30.w,
                       color: Colors.white,
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 20.h,
+                  height: context.isMobile ? 12 : 20.h,
                 ),
-                Row(
+                const Row(
                   children: [
-                    const TechCard(
+                    TechCard(
                       title: 'Flutter',
                       color: AppColors.blue,
                     ),
                     SizedBox(
-                      width: 8.w,
+                      width: 8,
                     ),
-                    const TechCard(
+                    TechCard(
                       title: 'Dart',
                       color: Color(0xffFBD38D),
                     ),
                     SizedBox(
-                      width: 8.w,
+                      width: 8,
                     ),
-                    const TechCard(
+                    TechCard(
                       title: 'Firebase',
                       color: AppColors.green,
                     ),
@@ -97,8 +101,8 @@ class ProjectsCard extends StatelessWidget {
                   'Movie Mania is movie recommendation app which shows top movies and tv shows around the world trending right now it has a inbuilt search feature which can be used to get the details of movies like there imdb rating and user reviews..',
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.6),
-                    fontSize: 16,
-                    height: 1.5,
+                    fontSize: context.isMobile ? 14: 16,
+                    height: context.isMobile ? 1.25 : 1.5,
                   ),
                 ),
               ],

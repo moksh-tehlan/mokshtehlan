@@ -8,74 +8,109 @@ class TopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        RichText(
-          text: TextSpan(
+    return context.isMobile
+        ? Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextSpan(
-                text: '{ ',
-                style: TextStyle(
-                  color: Colors.white.withOpacity(0.5),
-                  fontWeight: FontWeight.w900,
-                  fontSize: 34,
-                ),
-              ),
-              const TextSpan(
-                text: 'Moksh Tehlan',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                ),
-              ),
-              TextSpan(
-                text: ' }',
-                style: TextStyle(
-                  color: Colors.white.withOpacity(0.5),
-                  fontWeight: FontWeight.w900,
-                  fontSize: 34,
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: '{ ',
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.5),
+                        fontWeight: FontWeight.w900,
+                        fontSize: 30,
+                      ),
+                    ),
+                    const TextSpan(
+                      text: 'Moksh Tehlan',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ' }',
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.5),
+                        fontWeight: FontWeight.w900,
+                        fontSize: 30,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
-          ),
-        ),
-        const Spacer(),
-        Image.asset(
-          Assets.printerImage,
-          color: Colors.white,
-          width: 35,
-          height: 35,
-        ),
-        // topBarText('Home', isSelected: true),
-        SizedBox(
-          width: 40.w,
-        ),
-        SvgPicture.asset(
-          Assets.linkedInLogo,
-          color: Colors.white,
-          width: 35,
-          height: 35,
-        ),
-        SizedBox(
-          width: 40.w,
-        ),
-        Image.asset(
-          Assets.emailImage,
-          color: Colors.white,
-          width: 35,
-          height: 35,
-        ),
-        SizedBox(
-          width: 40.w,
-        ),
-        SvgPicture.asset(
-          Assets.githubLogo,
-          color: Colors.white,
-          width: 40,
-          height: 40,
-        ),
-      ],
-    );
+          )
+        : Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: '{ ',
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.5),
+                        fontWeight: FontWeight.w900,
+                        fontSize: 34,
+                      ),
+                    ),
+                    const TextSpan(
+                      text: 'Moksh Tehlan',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ' }',
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.5),
+                        fontWeight: FontWeight.w900,
+                        fontSize: 34,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              Image.asset(
+                Assets.printerImage,
+                color: Colors.white,
+                width: 35,
+                height: 35,
+              ),
+              // topBarText('Home', isSelected: true),
+              SizedBox(
+                width: 40.w,
+              ),
+              SvgPicture.asset(
+                Assets.linkedInLogo,
+                color: Colors.white,
+                width: 35,
+                height: 35,
+              ),
+              SizedBox(
+                width: 40.w,
+              ),
+              Image.asset(
+                Assets.emailImage,
+                color: Colors.white,
+                width: 35,
+                height: 35,
+              ),
+              SizedBox(
+                width: 40.w,
+              ),
+              SvgPicture.asset(
+                Assets.githubLogo,
+                color: Colors.white,
+                width: 40,
+                height: 40,
+              ),
+            ],
+          );
   }
 }

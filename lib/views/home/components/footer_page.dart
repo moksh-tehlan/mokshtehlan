@@ -12,25 +12,28 @@ class FooterPage extends StatelessWidget {
       children: [
         Text(
           "THAT'S ALL FOLKS!",
-          style:
-              TextStyle(color: Colors.white.withOpacity(0.6), letterSpacing: 5),
+          style: TextStyle(
+              color: Colors.white.withOpacity(0.6),
+              letterSpacing: 5,
+              fontSize: context.isMobile ? 14 : null),
         ),
         Text(
           'Moksh Tehlan',
-          style: TextStyle(color: Colors.green, fontSize: 55.sp),
+          style: TextStyle(
+              color: Colors.green, fontSize: context.isMobile ? 45 : 55.sp),
         ),
         SizedBox(
-          height: 80.h,
+          height: context.isMobile ? 30 : 80.h,
         ),
         Text(
           'MADE WITH',
           style: TextStyle(
-            color: Colors.white.withOpacity(0.5),
-            letterSpacing: 5,
-          ),
+              color: Colors.white.withOpacity(0.5),
+              letterSpacing: 5,
+              fontSize: context.isMobile ? 14 : null),
         ),
         SizedBox(
-          height: 30.h,
+          height: context.isMobile ? 15 : 30.h,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,14 +47,19 @@ class FooterPage extends StatelessWidget {
         ),
         Text(
           'All logos, trademarks, and brand names are the property of their respective owners.',
-          style: TextStyle(color: Colors.white.withOpacity(0.5)),
+          style: TextStyle(
+              color: Colors.white.withOpacity(0.5),
+              fontSize: context.isMobile ? 14 : null),
+          textAlign: TextAlign.center,
         ),
         SizedBox(
           height: 20.h,
         ),
         Text(
           'Hand-coded with 100% human efforts, zero AI.',
-          style: TextStyle(color: Colors.white.withOpacity(0.5)),
+          style: TextStyle(
+              color: Colors.white.withOpacity(0.5),
+              fontSize: context.isMobile ? 14 : null),
         ),
       ],
     );

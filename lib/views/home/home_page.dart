@@ -3,11 +3,10 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mokshtehlan/views/home/components/app_bar.dart';
-
-import 'components/footer_page.dart';
-import 'components/landing_page.dart';
-import 'components/project_page.dart';
-import 'components/work_experience_page.dart';
+import 'package:mokshtehlan/views/home/components/footer_page.dart';
+import 'package:mokshtehlan/views/home/components/landing_page.dart';
+import 'package:mokshtehlan/views/home/components/project_page.dart';
+import 'package:mokshtehlan/views/home/components/work_experience_page.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
@@ -25,18 +24,17 @@ class HomePageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const topBarHeight = 80.0;
-    print('Width: ${context.screenWidth} X Height: ${context.screenHeight}');
     return Scaffold(
       backgroundColor: Colors.black,
       body: Column(
         children: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 120).r,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
                   color: Colors.white,
-                  width: 0.25,
+                  width: context.isMobile ? 0.40 : 0.25,
                 ),
               ),
             ),
@@ -53,16 +51,22 @@ class HomePageView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
-                      height: context.screenHeight - topBarHeight,
+                      width: context.screenWidth,
+                      height: context.isMobile
+                          ? 0.35.sh
+                          : context.screenHeight - topBarHeight,
                       child: const LandingPage(),
                     ),
-                    const WorkExperiencePage(),
                     SizedBox(
-                      height: 80.h,
+                      width: context.screenWidth,
+                      child: const WorkExperiencePage(),
+                    ),
+                    SizedBox(
+                      height: context.isMobile ? 30 : 80.h,
                     ),
                     const ProjectPage(),
                     SizedBox(
-                      height: 200.h,
+                      height: context.isMobile ? 60 : 200.h,
                     ),
                     const FooterPage(),
                   ],
