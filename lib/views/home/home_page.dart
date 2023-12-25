@@ -23,56 +23,134 @@ class HomePageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const topBarHeight = 80.0;
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Column(
+    final topBarHeight = 80.sp;
+    return ResponsiveLayoutWidget(
+      mobileWidget: Stack(
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 120).r,
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.white,
-                  width: context.isMobile ? 0.40 : 0.25,
+          Scaffold(
+            backgroundColor: Colors.black,
+            body: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20).r,
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Colors.white,
+                        width: 0.25,
+                      ),
+                    ),
+                  ),
+                  height: topBarHeight,
+                  child: const TopBar(),
                 ),
-              ),
+                SizedBox(
+                  width: context.screenWidth,
+                  height: context.screenHeight - topBarHeight,
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20).r,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          SizedBox(
+                            width: context.screenWidth,
+                            height: 360.sp,
+                            child: const LandingPage(),
+                          ),
+                          SizedBox(
+                            width: context.screenWidth,
+                            child: const WorkExperiencePage(),
+                          ),
+                          SizedBox(
+                            height: 30.sp,
+                          ),
+                          const ProjectPage(),
+                          SizedBox(
+                            height: 160.sp,
+                          ),
+                          const FooterPage(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            height: topBarHeight,
-            child: const TopBar(),
           ),
-          SizedBox(
+          Container(
+            height: context.screenHeight,
             width: context.screenWidth,
-            height: context.screenHeight - topBarHeight,
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 120).r,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(
-                      width: context.screenWidth,
-                      height: context.isMobile
-                          ? 0.35.sh
-                          : context.screenHeight - topBarHeight,
-                      child: const LandingPage(),
-                    ),
-                    SizedBox(
-                      width: context.screenWidth,
-                      child: const WorkExperiencePage(),
-                    ),
-                    SizedBox(
-                      height: context.isMobile ? 30 : 80.h,
-                    ),
-                    const ProjectPage(),
-                    SizedBox(
-                      height: context.isMobile ? 60 : 200.h,
-                    ),
-                    const FooterPage(),
-                  ],
-                ),
+            child: Center(
+              child: Text(
+                '${context.screenWidth} X ${context.screenHeight}',
+                style: TextStyle(color: Colors.red.withOpacity(0.8)),
               ),
             ),
+          ),
+        ],
+      ),
+      desktopWidget: Stack(
+        children: [
+          Scaffold(
+            backgroundColor: Colors.black,
+            body: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 120).r,
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Colors.white,
+                        width: 0.25,
+                      ),
+                    ),
+                  ),
+                  height: topBarHeight,
+                  child: const TopBar(),
+                ),
+                SizedBox(
+                  width: context.screenWidth,
+                  height: context.screenHeight - topBarHeight,
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 120).r,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          SizedBox(
+                            width: context.screenWidth,
+                            height: context.screenHeight - topBarHeight,
+                            child: const LandingPage(),
+                          ),
+                          SizedBox(
+                            width: context.screenWidth,
+                            child: const WorkExperiencePage(),
+                          ),
+                          SizedBox(
+                            height: 80.sp,
+                          ),
+                          const ProjectPage(),
+                          SizedBox(
+                            height: 160.sp,
+                          ),
+                          const FooterPage(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: context.screenHeight,
+            width: context.screenWidth,
+            child: Center(
+                child: Text(
+              '${context.screenWidth} X ${context.screenHeight}',
+              style: TextStyle(color: Colors.red.withOpacity(0.8)),
+            )),
           ),
         ],
       ),

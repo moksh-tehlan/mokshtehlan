@@ -24,8 +24,8 @@ class _SkribblButtonState extends State<SkribblButton> {
 
   @override
   Widget build(BuildContext context) {
-    final width = 270.0.toResponsiveWidth(context);
-    final height = 80.0.toResponsiveHeight(context);
+    final width = 270.0.rw(context);
+    final height = 80.0.rh(context);
     return SizedBox(
       height: height + kShadow,
       width: width,
