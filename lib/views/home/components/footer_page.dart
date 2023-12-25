@@ -13,53 +13,59 @@ class FooterPage extends StatelessWidget {
         Text(
           "THAT'S ALL FOLKS!",
           style: TextStyle(
-              color: Colors.white.withOpacity(0.6),
-              letterSpacing: 5,
-              fontSize: context.isMobile ? 14 : null),
+            color: Colors.white.withOpacity(0.6),
+            letterSpacing: 5,
+            fontSize: 16.sp,
+          ),
         ),
         Text(
           'Moksh Tehlan',
           style: TextStyle(
-              color: Colors.green, fontSize: context.isMobile ? 45 : 55.sp),
+            color: Colors.green,
+            fontSize: 55.sp,
+          ),
         ),
         SizedBox(
-          height: context.isMobile ? 30 : 80.h,
+          height: 80.sp,
         ),
         Text(
           'MADE WITH',
           style: TextStyle(
-              color: Colors.white.withOpacity(0.5),
-              letterSpacing: 5,
-              fontSize: context.isMobile ? 14 : null),
+            color: Colors.white.withOpacity(0.5),
+            letterSpacing: 5,
+            fontSize: 16.sp,
+          ),
         ),
         SizedBox(
-          height: context.isMobile ? 15 : 30.h,
+          height: 30.sp,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(Assets.flutterLogo),
-            SvgPicture.asset(Assets.dartLogo),
+            SvgPicture.asset(Assets.flutterLogo,width: 60.sp,height: 60.sp,),
+            SvgPicture.asset(Assets.dartLogo,width: 60.w,height: 60.w,),
           ],
         ),
         SizedBox(
-          height: 20.h,
+          height: 20.sp,
         ),
         Text(
           'All logos, trademarks, and brand names are the property of their respective owners.',
           style: TextStyle(
-              color: Colors.white.withOpacity(0.5),
-              fontSize: context.isMobile ? 14 : null),
+            color: Colors.white.withOpacity(0.5),
+            fontSize: 16.sp,
+          ),
           textAlign: TextAlign.center,
         ),
         SizedBox(
-          height: 20.h,
+          height: 20.sp,
         ),
         Text(
           'Hand-coded with 100% human efforts, zero AI.',
           style: TextStyle(
-              color: Colors.white.withOpacity(0.5),
-              fontSize: context.isMobile ? 14 : null),
+            color: Colors.white.withOpacity(0.5),
+            fontSize: 16.sp,
+          ),
         ),
       ],
     );

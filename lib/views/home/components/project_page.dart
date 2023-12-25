@@ -9,101 +9,106 @@ class ProjectPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return context.isMobile
-        ? Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'All Creative Works.',
-                style: TextStyle(color: Colors.white, fontSize: 22),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              Text(
-                "Here's some of my projects that I have worked on.",
-                style: TextStyle(
-                  color: Colors.white.withOpacity(0.6),
-                  fontSize: 16,
+    return ResponsiveLayoutWidget(
+      mobileWidget: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'All Creative Works.',
+            style: TextStyle(color: Colors.white, fontSize: 22.sp),
+          ),
+          SizedBox(
+            height: 6.sp,
+          ),
+          Text(
+            "Here's some of my projects that I have worked on.",
+            style: TextStyle(
+              color: Colors.white.withOpacity(0.6),
+              fontSize: 16.sp,
+            ),
+          ),
+          SizedBox(
+            height: 6.sp,
+          ),
+          Text(
+            'Explore more ->',
+            style: TextStyle(color: Colors.green, fontSize: 16.sp),
+          ),
+          SizedBox(
+            height: 20.sp,
+          ),
+          SizedBox(
+            height: 350.sp,
+            child: const ProjectsCard(),
+          ),
+          SizedBox(
+            height: 20.sp,
+          ),
+          SizedBox(
+            height: 350.sp,
+            child: const ProjectsCard(),
+          ),
+          SizedBox(
+            height: 20.sp,
+          ),
+          SizedBox(
+            height: 350.sp,
+            child: const ProjectsCard(),
+          ),
+        ],
+      ),
+      desktopWidget: StaggeredGrid.count(
+        crossAxisCount: 2,
+        mainAxisSpacing: 40.sp,
+        crossAxisSpacing: 40.sp,
+        children: [
+          StaggeredGridTile.count(
+            crossAxisCellCount: 1,
+            mainAxisCellCount: 0.25,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'All Creative Works.',
+                  style: TextStyle(color: Colors.white, fontSize: 30.sp),
                 ),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              const Text(
-                'Explore more ->',
-                style: TextStyle(color: Colors.green, fontSize: 16),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const SizedBox(
-                height: 350,
-                child: ProjectsCard(),
-              ),
-              const SizedBox(height: 20,),
-              const SizedBox(
-                height: 350,
-                child: ProjectsCard(),
-              ),
-              const SizedBox(height: 20,),
-              const SizedBox(
-                height: 350,
-                child: ProjectsCard(),
-              ),
-            ],
-          )
-        : StaggeredGrid.count(
-            crossAxisCount: 2,
-            mainAxisSpacing: 40,
-            crossAxisSpacing: 40,
-            children: [
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 0.25,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'All Creative Works.',
-                      style: TextStyle(color: Colors.white, fontSize: 28),
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    Text(
-                      "Here's some of my projects that I have worked on.",
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.6),
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    const Text(
-                      'Explore more ->',
-                      style: TextStyle(color: Colors.green, fontSize: 20),
-                    ),
-                  ],
+                SizedBox(
+                  height: 10.h,
                 ),
-              ),
-              const StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 0.65,
-                child: ProjectsCard(),
-              ),
-              const StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 0.65,
-                child: ProjectsCard(),
-              ),
-              const StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 0.65,
-                child: ProjectsCard(),
-              ),
-            ],
-          );
+                Text(
+                  "Here's some of my projects that I have worked on.",
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.6),
+                    fontSize: 22.sp,
+                  ),
+                ),
+                SizedBox(
+                  height: 10.sp,
+                ),
+                Text(
+                  'Explore more ->',
+                  style: TextStyle(color: Colors.green, fontSize: 22.sp),
+                ),
+              ],
+            ),
+          ),
+          const StaggeredGridTile.count(
+            crossAxisCellCount: 1,
+            mainAxisCellCount: 0.65,
+            child: ProjectsCard(),
+          ),
+          const StaggeredGridTile.count(
+            crossAxisCellCount: 1,
+            mainAxisCellCount: 0.65,
+            child: ProjectsCard(),
+          ),
+          const StaggeredGridTile.count(
+            crossAxisCellCount: 1,
+            mainAxisCellCount: 0.65,
+            child: ProjectsCard(),
+          ),
+        ],
+      ),
+    );
   }
 }

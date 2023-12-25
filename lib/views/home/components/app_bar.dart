@@ -20,14 +20,14 @@ class TopBar extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white.withOpacity(0.5),
                         fontWeight: FontWeight.w900,
-                        fontSize: 30,
+                        fontSize: 30.sp,
                       ),
                     ),
-                    const TextSpan(
+                    TextSpan(
                       text: 'Moksh Tehlan',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 28,
+                        fontSize: 28.sp,
                       ),
                     ),
                     TextSpan(
@@ -35,7 +35,7 @@ class TopBar extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white.withOpacity(0.5),
                         fontWeight: FontWeight.w900,
-                        fontSize: 30,
+                        fontSize: 30.sp,
                       ),
                     ),
                   ],
@@ -54,14 +54,14 @@ class TopBar extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white.withOpacity(0.5),
                         fontWeight: FontWeight.w900,
-                        fontSize: 34,
+                        fontSize: 40.sp,
                       ),
                     ),
-                    const TextSpan(
+                    TextSpan(
                       text: 'Moksh Tehlan',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 30,
+                        fontSize: 36.sp,
                       ),
                     ),
                     TextSpan(
@@ -69,7 +69,7 @@ class TopBar extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white.withOpacity(0.5),
                         fontWeight: FontWeight.w900,
-                        fontSize: 34,
+                        fontSize: 40.sp,
                       ),
                     ),
                   ],
@@ -79,8 +79,8 @@ class TopBar extends StatelessWidget {
               Image.asset(
                 Assets.printerImage,
                 color: Colors.white,
-                width: 35,
-                height: 35,
+                width: 35.sp,
+                height: 35.sp,
               ),
               // topBarText('Home', isSelected: true),
               SizedBox(
@@ -89,8 +89,8 @@ class TopBar extends StatelessWidget {
               SvgPicture.asset(
                 Assets.linkedInLogo,
                 color: Colors.white,
-                width: 35,
-                height: 35,
+                width: 35.sp,
+                height: 35.sp,
               ),
               SizedBox(
                 width: 40.w,
@@ -98,8 +98,8 @@ class TopBar extends StatelessWidget {
               Image.asset(
                 Assets.emailImage,
                 color: Colors.white,
-                width: 35,
-                height: 35,
+                width: 35.sp,
+                height: 35.sp,
               ),
               SizedBox(
                 width: 40.w,
@@ -107,8 +107,8 @@ class TopBar extends StatelessWidget {
               SvgPicture.asset(
                 Assets.githubLogo,
                 color: Colors.white,
-                width: 40,
-                height: 40,
+                width: 40.sp,
+                height: 40.sp,
               ),
             ],
           );

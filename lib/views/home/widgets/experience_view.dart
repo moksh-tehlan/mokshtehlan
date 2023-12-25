@@ -27,7 +27,7 @@ class ExperienceView extends StatelessWidget {
   Widget build(BuildContext context) {
     return context.isMobile
         ? SizedBox(
-            height: 320.h,
+            height: 400.h,
             width: context.screenWidth,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,7 +98,9 @@ class ExperienceView extends StatelessWidget {
                           fontSize: 16,
                         ),
                       ),
-                      const SizedBox(height: 10,),
+                      const SizedBox(
+                        height: 10,
+                      ),
                       Text(
                         description,
                         style: TextStyle(
@@ -113,7 +115,7 @@ class ExperienceView extends StatelessWidget {
             ),
           )
         : SizedBox(
-            height: 0.28.sh,
+            height: 380.sp,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -123,9 +125,9 @@ class ExperienceView extends StatelessWidget {
                     children: [
                       Text(
                         companyName,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
-                          fontSize: 32,
+                          fontSize: 32.sp,
                         ),
                       ),
                       SizedBox(
@@ -135,7 +137,7 @@ class ExperienceView extends StatelessWidget {
                         workingDate,
                         style: TextStyle(
                           color: Colors.white.withOpacity(0.6),
-                          fontSize: 22,
+                          fontSize: 22.sp,
                         ),
                       ),
                     ],
@@ -188,9 +190,9 @@ class ExperienceView extends StatelessWidget {
                     children: [
                       Text(
                         designation,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.green,
-                          fontSize: 32,
+                          fontSize: 32.sp,
                         ),
                       ),
                       SizedBox(
@@ -200,7 +202,7 @@ class ExperienceView extends StatelessWidget {
                         description,
                         style: TextStyle(
                           color: Colors.white.withOpacity(0.6),
-                          fontSize: 18,
+                          fontSize: 26.sp,
                         ),
                       ),
                     ],

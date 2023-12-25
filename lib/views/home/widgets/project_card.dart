@@ -21,19 +21,17 @@ class ProjectsCard extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
+                  topLeft: const Radius.circular(20).r,
+                  topRight: const Radius.circular(20).r,
                 ),
                 color: Colors.pink,
               ),
             ),
           ),
           Container(
-            padding: context.isMobile
-                ? const EdgeInsets.all(10)
-                : const EdgeInsets.all(20).r,
+            padding: const EdgeInsets.all(20).r,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20),
@@ -47,29 +45,30 @@ class ProjectsCard extends StatelessWidget {
                     Text(
                       'Movie Mania',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: context.isMobile ? 22 : 28),
+                        color: Colors.white,
+                        fontSize: 28.sp,
+                      ),
                     ),
                     const Spacer(),
                     Image.asset(
                       Assets.githubImage,
-                      width: context.isMobile ? 20 : 30.w,
-                      height: context.isMobile ? 20 : 30.w,
+                      width: 30.w,
+                      height: 30.w,
                       color: Colors.white,
                     ),
                     SizedBox(
-                      width: context.isMobile ? 15 : 20.w,
+                      width: 20.w,
                     ),
                     Image.asset(
                       Assets.externalLinkImage,
-                      width: context.isMobile ? 20 : 30.w,
-                      height: context.isMobile ? 20 : 30.w,
+                      width: 30.w,
+                      height: 30.w,
                       color: Colors.white,
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: context.isMobile ? 12 : 20.h,
+                  height: 20.sp,
                 ),
                 const Row(
                   children: [
@@ -101,8 +100,8 @@ class ProjectsCard extends StatelessWidget {
                   'Movie Mania is movie recommendation app which shows top movies and tv shows around the world trending right now it has a inbuilt search feature which can be used to get the details of movies like there imdb rating and user reviews..',
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.6),
-                    fontSize: context.isMobile ? 14: 16,
-                    height: context.isMobile ? 1.25 : 1.5,
+                    fontSize: 16.sp,
+                    height: 1.5,
                   ),
                 ),
               ],
