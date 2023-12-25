@@ -46,10 +46,8 @@ class _CasetImageState extends State<CasetImage>
             opacity: context.isMobile ? 0.20 : 1,
             child: Image.asset(
               Assets.casetImage, // Replace with your image path
-              width: 500.w,
-              height: 500.w,
-              // color: Colors.white.withOpacity(0.6),
-              // colorBlendMode: BlendMode.dstATop,
+              width: context.isMobile ? 200.w : 500.w,
+              height: context.isMobile ? 200.w : 500.w,
             ),
           ),
         );

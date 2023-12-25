@@ -19,22 +19,26 @@ class WorkExperiencePage extends StatelessWidget {
                 TextSpan(
                   text: '</ ',
                   style: TextStyle(
-                      color: Colors.white.withOpacity(0.6), fontSize: 26),
+                    color: Colors.white.withOpacity(0.6),
+                    fontSize: 26.sp,
+                  ),
                 ),
-                const TextSpan(
+                TextSpan(
                   text: 'My Work Experience',
-                  style: TextStyle(color: Colors.white, fontSize: 24),
+                  style: TextStyle(color: Colors.white, fontSize: 24.sp),
                 ),
                 TextSpan(
                   text: ' >',
                   style: TextStyle(
-                      color: Colors.white.withOpacity(0.6), fontSize: 26),
+                    color: Colors.white.withOpacity(0.6),
+                    fontSize: 26.sp,
+                  ),
                 ),
               ],
             ),
           ),
-          const SizedBox(
-            height: 30,
+          SizedBox(
+            height: 30.sp,
           ),
           const ExperienceView(
             companyName: 'Grappus',

@@ -38,21 +38,21 @@ class ProjectPage extends StatelessWidget {
             height: 20.sp,
           ),
           SizedBox(
-            height: 350.sp,
+            height: 400.sp,
             child: const ProjectsCard(),
           ),
           SizedBox(
             height: 20.sp,
           ),
           SizedBox(
-            height: 350.sp,
+            height: 400.sp,
             child: const ProjectsCard(),
           ),
           SizedBox(
             height: 20.sp,
           ),
           SizedBox(
-            height: 350.sp,
+            height: 400.sp,
             child: const ProjectsCard(),
           ),
         ],
