@@ -25,134 +25,107 @@ class HomePageView extends StatelessWidget {
   Widget build(BuildContext context) {
     final topBarHeight = 80.sp;
     return ResponsiveLayoutWidget(
-      mobileWidget: Stack(
-        children: [
-          Scaffold(
-            backgroundColor: Colors.black,
-            body: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20).r,
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Colors.white,
-                        width: 0.25,
-                      ),
-                    ),
-                  ),
-                  height: topBarHeight,
-                  child: const TopBar(),
-                ),
-                SizedBox(
-                  width: context.screenWidth,
-                  height: context.screenHeight - topBarHeight,
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20).r,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          SizedBox(
-                            width: context.screenWidth,
-                            height: 360.sp,
-                            child: const LandingPage(),
-                          ),
-                          SizedBox(
-                            width: context.screenWidth,
-                            child: const WorkExperiencePage(),
-                          ),
-                          SizedBox(
-                            height: 30.sp,
-                          ),
-                          const ProjectPage(),
-                          SizedBox(
-                            height: 160.sp,
-                          ),
-                          const FooterPage(),
-                        ],
-                      ),
-                    ),
+      mobileWidget: Scaffold(
+        backgroundColor: Colors.black,
+        body: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20).r,
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Colors.white,
+                    width: 0.25,
                   ),
                 ),
-              ],
+              ),
+              height: topBarHeight,
+              child: const TopBar(),
             ),
-          ),
-          Container(
-            height: context.screenHeight,
-            width: context.screenWidth,
-            child: Center(
-              child: Text(
-                '${context.screenWidth} X ${context.screenHeight}',
-                style: TextStyle(color: Colors.red.withOpacity(0.8)),
+            SizedBox(
+              width: context.screenWidth,
+              height: context.screenHeight - topBarHeight,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20).r,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(
+                        width: context.screenWidth,
+                        height: 360.sp,
+                        child: const LandingPage(),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth,
+                        child: const WorkExperiencePage(),
+                      ),
+                      SizedBox(
+                        height: 30.sp,
+                      ),
+                      const ProjectPage(),
+                      SizedBox(
+                        height: 160.sp,
+                      ),
+                      const FooterPage(),
+                    ],
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-      desktopWidget: Stack(
-        children: [
-          Scaffold(
-            backgroundColor: Colors.black,
-            body: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 120).r,
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Colors.white,
-                        width: 0.25,
-                      ),
-                    ),
-                  ),
-                  height: topBarHeight,
-                  child: const TopBar(),
-                ),
-                SizedBox(
-                  width: context.screenWidth,
-                  height: context.screenHeight - topBarHeight,
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 120).r,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          SizedBox(
-                            width: context.screenWidth,
-                            height: context.screenHeight - topBarHeight,
-                            child: const LandingPage(),
-                          ),
-                          SizedBox(
-                            width: context.screenWidth,
-                            child: const WorkExperiencePage(),
-                          ),
-                          SizedBox(
-                            height: 80.sp,
-                          ),
-                          const ProjectPage(),
-                          SizedBox(
-                            height: 160.sp,
-                          ),
-                          const FooterPage(),
-                        ],
-                      ),
-                    ),
+      desktopWidget: Scaffold(
+        backgroundColor: Colors.black,
+        body: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 120).r,
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Colors.white,
+                    width: 0.25,
                   ),
                 ),
-              ],
+              ),
+              height: topBarHeight,
+              child: const TopBar(),
             ),
-          ),
-          Container(
-            height: context.screenHeight,
-            width: context.screenWidth,
-            child: Center(
-                child: Text(
-              '${context.screenWidth} X ${context.screenHeight}',
-              style: TextStyle(color: Colors.red.withOpacity(0.8)),
-            )),
-          ),
-        ],
+            SizedBox(
+              width: context.screenWidth,
+              height: context.screenHeight - topBarHeight,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 120).r,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(
+                        width: context.screenWidth,
+                        height: context.screenHeight - topBarHeight,
+                        child: const LandingPage(),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth,
+                        child: const WorkExperiencePage(),
+                      ),
+                      SizedBox(
+                        height: 80.sp,
+                      ),
+                      const ProjectPage(),
+                      SizedBox(
+                        height: 160.sp,
+                      ),
+                      const FooterPage(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
