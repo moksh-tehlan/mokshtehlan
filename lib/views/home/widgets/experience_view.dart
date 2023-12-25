@@ -27,7 +27,7 @@ class ExperienceView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveLayoutWidget(
       mobileWidget: SizedBox(
-        height: 260.sp,
+        height: 250.sp,
         width: context.screenWidth,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,36 +76,36 @@ class ExperienceView extends StatelessWidget {
                 children: [
                   Text(
                     designation,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.green,
-                      fontSize: 22,
+                      fontSize: 22.sp,
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: 5.sp,
                   ),
                   Text(
                     companyName,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 18.sp,
                     ),
                   ),
                   Text(
                     workingDate,
                     style: TextStyle(
                       color: Colors.white.withOpacity(0.6),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: 8.sp,
                   ),
                   Text(
                     description,
                     style: TextStyle(
                       color: Colors.white.withOpacity(0.6),
-                      fontSize: 14,
+                      fontSize: 14.sp,
                     ),
                   ),
                 ],
